@@ -1,6 +1,7 @@
 from __future__ import print_function
 import argparse
 import torch
+import time
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
@@ -140,6 +141,11 @@ def main():
     if args.save_model:
         torch.save(model.state_dict(), "mnist_cnn.pt")
 
+if __name__ == "__main__":
+    num_runs = 10  # Adjust the number of times you want to run the program
 
-if __name__ == '__main__':
-    main()
+    for i in range(1, num_runs + 1):
+        print(f"Run {i}:")
+        main()
+        print("\nWaiting for 2 seconds before the next run...")
+        time.sleep(2)
