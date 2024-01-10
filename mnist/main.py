@@ -78,7 +78,7 @@ def main():
                         help='input batch size for training (default: 64)')
     parser.add_argument('--test-batch-size', type=int, default=1000, metavar='N',
                         help='input batch size for testing (default: 1000)')
-    parser.add_argument('--epochs', type=int, default=14, metavar='N',
+    parser.add_argument('--epochs', type=int, default=150, metavar='N',
                         help='number of epochs to train (default: 14)')
     parser.add_argument('--lr', type=float, default=1.0, metavar='LR',
                         help='learning rate (default: 1.0)')
@@ -142,10 +142,11 @@ def main():
         torch.save(model.state_dict(), "mnist_cnn.pt")
 
 if __name__ == "__main__":
-    num_runs = 10  # Adjust the number of times you want to run the program
-
-    for i in range(1, num_runs + 1):
-        print(f"Run {i}:")
-        main()
-        print("\nWaiting for 2 seconds before the next run...")
-        time.sleep(2)
+    main()
+  #  num_runs = 10  # Adjust the number of times you want to run the program
+    
+ #   for i in range(1, num_runs + 1):
+#        print(f"Run {i}:")
+     #   main()
+    #    print("\nWaiting for 2 seconds before the next run...")
+   #     time.sleep(2)
